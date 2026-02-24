@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Intake — Harrie van Ham</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .section {
+    margin-bottom: 2rem;
+  }
+  .section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #222;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .hint {
+    color: #666;
+    font-size: 0.82rem;
+    margin-bottom: 0.5rem;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    color: #e8e8e8;
+    font-size: 1rem;
+    font-family: inherit;
+    margin-bottom: 1.2rem;
+    transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #555;
+  }
+  textarea { resize: vertical; min-height: 80px; }
+  select { appearance: none; cursor: pointer; }
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
+  }
+  .radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 400;
+    cursor: pointer;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+  .radio-group label:has(input:checked) {
+    border-color: #c0392b;
+    background: #1a1212;
+  }
+  .radio-group input { display: none; }
+  .checkbox-group { margin-bottom: 1.2rem; }
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #c0392b;
+  }
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.9rem;
+    background: #c0392b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  button[type="submit"]:hover { background: #a93226; }
+  .footer {
+    text-align: center;
+    color: #444;
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Website Intake</h1>
+  <p class="subtitle">Hey Harrie, vul onderstaand kort in zodat ik een eerste opzet kan maken voor je website. Duurt max 5 minuten.</p>
+
+  <form action="https://formspree.io/f/xwpkgjvl" method="POST">
+
+    <div class="section">
+      <div class="section-title">Over het bedrijf</div>
+
+      <label>Bedrijfsnaam</label>
+      <p class="hint">Wordt het onder eigen naam of een andere handelsnaam?</p>
+      <input type="text" name="bedrijfsnaam" placeholder="bijv. Van Ham Automotive" required>
+
+      <label>Welke auto's ga je verkopen?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="segment" value="alleen-porsche"> Alleen Porsche</label>
+        <label><input type="radio" name="segment" value="porsche-plus"> Porsche + andere premium merken</label>
+        <label><input type="radio" name="segment" value="breed"> Breder assortiment</label>
+      </div>
+
+      <label>Hoeveel auto's verwacht je gemiddeld op voorraad?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="voorraad" value="1-5"> 1-5</label>
+        <label><input type="radio" name="voorraad" value="5-15"> 5-15</label>
+        <label><input type="radio" name="voorraad" value="15+"> 15+</label>
+      </div>
+
+      <label>Wat bied je aan?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="diensten" value="verkoop"> Verkoop</label>
+        <label><input type="checkbox" name="diensten" value="inkoop"> Inkoop</label>
+        <label><input type="checkbox" name="diensten" value="bemiddeling"> Bemiddeling / consignatie</label>
+        <label><input type="checkbox" name="diensten" value="advies"> Aankoopadvies</label>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">De website</div>
+
+      <label>Hoe wil je dat klanten contact opnemen?</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="contact" value="whatsapp"> WhatsApp</label>
+        <label><input type="checkbox" name="contact" value="bellen"> Bellen</label>
+        <label><input type="checkbox" name="contact" value="email"> Email</label>
+        <label><input type="checkbox" name="contact" value="formulier"> Contactformulier op de site</label>
+      </div>
+
+      <label>Wil je zelf auto's kunnen toevoegen en wijzigen?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="zelfbeheer" value="ja"> Ja, zelf beheren</label>
+        <label><input type="radio" name="zelfbeheer" value="nee"> Nee, dat mag jij doen</label>
+        <label><input type="radio" name="zelfbeheer" value="weet-niet"> Weet ik nog niet</label>
+      </div>
+
+      <label>Gebruik je al een platform voor je voorraad?</label>
+      <p class="hint">Denk aan AutoTrack, Marktplaats, AutoScout24, of een eigen lijst</p>
+      <input type="text" name="platform" placeholder="bijv. Marktplaats, of nog niks">
+
+      <label>Zijn er websites die je mooi vindt?</label>
+      <p class="hint">Mag ook buiten automotive. Geeft mij een idee van je smaak.</p>
+      <textarea name="inspiratie" placeholder="Plak hier eventueel links of beschrijf wat je mooi vindt"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Branding</div>
+
+      <label>Heb je al een logo?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="logo" value="ja"> Ja</label>
+        <label><input type="radio" name="logo" value="nee"> Nee, moet nog gemaakt worden</label>
+      </div>
+
+      <label>Kort over jezelf</label>
+      <p class="hint">2-3 zinnen over je achtergrond die op de site mogen. Klanten willen weten met wie ze zaken doen.</p>
+      <textarea name="bio" placeholder="bijv. 25 jaar ervaring in de Porsche wereld, waarvan X jaar bij Porsche Centrum Rotterdam..."></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Gegevens</div>
+
+      <label>Telefoonnummer</label>
+      <input type="tel" name="telefoon" placeholder="+31 6 ...">
+
+      <label>Email</label>
+      <input type="email" name="email" placeholder="harrie@...">
+
+      <label>Gewenste domeinnaam</label>
+      <p class="hint">Als je al een idee hebt. Anders bedenken we samen iets.</p>
+      <input type="text" name="domein" placeholder="bijv. vanhamautomotive.nl">
+
+      <label>Verder nog iets?</label>
+      <textarea name="overig" placeholder="Wensen, ideeen, vragen..."></textarea>
+    </div>
+
+    <button type="submit">Versturen</button>
+  </form>
+
+  <p class="footer">Dit formulier wordt verstuurd naar Ferdi. Je gegevens worden nergens anders opgeslagen.</p>
+</div>
+</body>
+</html>
